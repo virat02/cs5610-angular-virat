@@ -9,7 +9,7 @@ import PageService from '../services/PageService';
 })
 export class PageRowComponent implements OnInit {
 
-  @Input() row;
+  @Input() row
   span = 6;
   @Input() websiteId;
   @Input() pageId;
@@ -24,8 +24,9 @@ export class PageRowComponent implements OnInit {
     const column = {
       title: 'New Column',
       widgets: []
-    };
-    this.row.columns.push(column);
+    }
+    this.row.columns.push(column)
     this.service.updatePage(this.websiteId, this.pageId, this.page);
+
   }
 }

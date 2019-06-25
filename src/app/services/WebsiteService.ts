@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 @Injectable()
 export default class WebsiteService {
@@ -19,20 +19,20 @@ export default class WebsiteService {
       .then(response => response.json());
   }
 
-  deleteWebsite(id: string) {
-    return fetch(this.WEBSITE_URL + '/' + id, {
+  deleteWebsite(_id: string) {
+    return fetch(this.WEBSITE_URL + '/' + _id, {
       method: 'DELETE'
     })
       .then(response => response.json());
   }
 
-  updateWebsite = (id: string, website: any) =>
-    fetch(this.WEBSITE_URL + '/' + id, {
+  updateWebsite = (_id: string, website: any) =>
+    fetch(this.WEBSITE_URL + '/' + _id, {
       method: 'PUT',
       body: JSON.stringify(website),
       headers: {
         'content-type': 'application/json'
       }
     })
-      .then(response => response.json())
+      .then(response => response.json());
 }

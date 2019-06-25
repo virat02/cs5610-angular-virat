@@ -16,21 +16,22 @@ export class PageListComponent implements OnInit {
   websiteId = ''
 
   ngOnInit() {
-    this.router.params.subscribe(params => {
+    this.router.params.subscribe(params =>
+    {
       this.websiteId = params.websiteId;
       this.service.findPagesForWebsite(params.websiteId)
-        .then(pages => this.pages = pages);
+        .then(pages => this.pages = pages)
     }
-    );
+    )
   }
 
   appendPage() {
     const pageObj = {
       title: 'New Page'
-    };
+    }
     this.service.createPage(this.websiteId, pageObj)
       .then(page => this.pages.push(pageObj))
-      .catch(error => console.log(error));
+      .catch(error => console.log(error))
 
   }
 }

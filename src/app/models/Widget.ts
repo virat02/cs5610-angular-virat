@@ -1,8 +1,8 @@
 export default class Widget {
-  type: string;
-  text: string;
-  size: number;
-  constructor(type: string = 'HEADING', text: string = 'New Widget !!!', size: number = 1) {
+  type: String;
+  text: String;
+  size: Number;
+  constructor(type: String = 'HEADING', text: String = 'New Widget !!!', size: Number = 1) {
     this.type = type;
     this.text = text;
     this.size = size;

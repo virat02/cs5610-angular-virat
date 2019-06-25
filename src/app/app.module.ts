@@ -1,76 +1,72 @@
-/**
- * Imports
- */
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { routing } from './app.routing';
 
-/**
- * Components
- */
 import { AppComponent } from './app.component';
-import { WebsiteNavigatorComponent } from './website-navigator/website-navigator.component';
 import { LoginComponent } from './login/login.component';
-import { ColumnComponent } from './layout-editor/column/column.component';
-import { RowListComponent } from './row-list/row-list.component';
-import { PageColumnComponent } from './page-column/page-column.component';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
+import { routing } from './app.routing';
+import UserService from './services/UserService';
+import { CourseNavigatorServiceClient } from './services/CourseNavigatorServiceClient';
+import { CourseNavigatorComponent } from './course-navigator/course-navigator.component';
 import { PageComponent } from './layout-editor/page/page.component';
 import { RowComponent } from './layout-editor/row/row.component';
-import { WebsiteListComponent } from './website-list/website-list.component';
-import { PageRowComponent } from './page-row/page-row.component';
-import { PageListComponent } from './page-list/page-list.component';
-import { PageEditorComponent } from './page-editor/page-editor.component';
-import { WidgetToolbarComponent } from './layout-editor/widgets/widget-toolbar/widget-toolbar.component';
-import { WidgetEditorComponent } from './layout-editor/widgets/widget-editor/widget-editor.component';
+import { ColumnComponent } from './layout-editor/column/column.component';
 import { WidgetComponent } from './layout-editor/widgets/widget/widget.component';
-import { ParagraphComponent } from './layout-editor/widgets/paragraph/paragraph.component';
 import { HeadingComponent } from './layout-editor/widgets/heading/heading.component';
+import { ParagraphComponent } from './layout-editor/widgets/paragraph/paragraph.component';
+import { WidgetToolbarComponent } from './layout-editor/widgets/widget-toolbar/widget-toolbar.component';
+import { LessonListComponent } from './lesson-list/lesson-list.component';
+import Model from './models/Model';
 import { ColumnToolbarComponent } from './column-toolbar/column-toolbar.component';
-
-/**
- * Providers
- */
-import PageService from './services/PageService';
-import UserService from './services/UserService';
-import WebsiteService from './services/WebsiteService';
 import LayoutService from './services/LayoutService';
+import { WebsiteListComponent } from './website-list/website-list.component';
+import WebsiteService from './services/WebsiteService';
+import { PageListComponent } from './page-list/page-list.component';
+import PageService from './services/PageService';
+import { PageEditorComponent } from './page-editor/page-editor.component';
+import { PageRowComponent } from './page-row/page-row.component';
+import { PageColumnComponent } from './page-column/page-column.component';
+import PageModel from './models/PageModel';
+import {WidgetEditorComponent} from './layout-editor/widgets/widget-editor/widget-editor.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    ColumnComponent,
-    RowListComponent,
-    PageColumnComponent,
     RegisterComponent,
     ProfileComponent,
-    WebsiteNavigatorComponent,
+    CourseNavigatorComponent,
     PageComponent,
     RowComponent,
+    ColumnComponent,
+    WidgetComponent,
+    HeadingComponent,
+    ParagraphComponent,
+    WidgetToolbarComponent,
+    LessonListComponent,
+    ColumnToolbarComponent,
     WebsiteListComponent,
-    PageRowComponent,
     PageListComponent,
     PageEditorComponent,
-    WidgetToolbarComponent,
-    WidgetEditorComponent,
-    WidgetComponent,
-    ParagraphComponent,
-    HeadingComponent,
-    ColumnToolbarComponent
+    PageRowComponent,
+    PageColumnComponent,
+    WidgetEditorComponent
   ],
   imports: [
+    routing,
     BrowserModule,
-    FormsModule,
-    routing
+    FormsModule
   ],
   providers: [
-    PageService,
     UserService,
+    CourseNavigatorServiceClient,
     WebsiteService,
+    PageService,
+    Model,
     LayoutService,
+    PageModel
   ],
   bootstrap: [AppComponent]
 })
