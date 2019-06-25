@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CourseNavigatorComponent } from './course-navigator.component';
+import { RowListComponent } from './row-list.component';
 
-describe('CourseNavigatorComponent', () => {
-  let component: CourseNavigatorComponent;
-  let fixture: ComponentFixture<CourseNavigatorComponent>;
+describe('RowListComponent', () => {
+  let component: RowListComponent;
+  let fixture: ComponentFixture<RowListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CourseNavigatorComponent ]
+      declarations: [ RowListComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CourseNavigatorComponent);
+    fixture = TestBed.createComponent(RowListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

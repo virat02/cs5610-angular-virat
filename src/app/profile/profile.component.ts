@@ -11,8 +11,6 @@ export class ProfileComponent implements OnInit {
 
   constructor(private userService: UserService,
               private activatedRoute: ActivatedRoute) { }
-
-  userId: string;
   user = {
     username: '',
     password: '',
@@ -24,7 +22,6 @@ export class ProfileComponent implements OnInit {
     this.activatedRoute
       .params
       .subscribe(params => {
-        console.log('PARAMS', params);
         this.userService.findUserById(params.userId)
           .then(user => {
             this.user = user;

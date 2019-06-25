@@ -10,10 +10,10 @@ import { routing } from './app.routing';
  * Components
  */
 import { AppComponent } from './app.component';
-import { CourseNavigatorComponent } from './course-navigator/course-navigator.component';
+import { WebsiteNavigatorComponent } from './website-navigator/website-navigator.component';
 import { LoginComponent } from './login/login.component';
 import { ColumnComponent } from './layout-editor/column/column.component';
-import { LessonListComponent } from './lesson-list/lesson-list.component';
+import { RowListComponent } from './row-list/row-list.component';
 import { PageColumnComponent } from './page-column/page-column.component';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -37,18 +37,17 @@ import PageService from './services/PageService';
 import UserService from './services/UserService';
 import WebsiteService from './services/WebsiteService';
 import LayoutService from './services/LayoutService';
-import CourseNavigatorServiceClient from './services/CourseNavigatorServiceClient';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ColumnComponent,
-    LessonListComponent,
+    RowListComponent,
     PageColumnComponent,
     RegisterComponent,
     ProfileComponent,
-    CourseNavigatorComponent,
+    WebsiteNavigatorComponent,
     PageComponent,
     RowComponent,
     WebsiteListComponent,
@@ -72,7 +71,6 @@ import CourseNavigatorServiceClient from './services/CourseNavigatorServiceClien
     UserService,
     WebsiteService,
     LayoutService,
-    CourseNavigatorServiceClient
   ],
   bootstrap: [AppComponent]
 })

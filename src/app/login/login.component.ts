@@ -22,7 +22,6 @@ export class LoginComponent implements OnInit {
     this.userService.findUserByCredentials(username, password)
       .then(response => response.json())
       .then(user => {
-          console.log('USER', user);
           user != null ?
             this.router.navigate(['profile', user._id])
             :

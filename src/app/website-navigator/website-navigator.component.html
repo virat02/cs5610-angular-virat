@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col">
+    <ul class="list-group">
+      <li class="list-group-item">
+        <b><u><i>Websites</i></u></b>
+      </li>
+      <li *ngFor="let website of websites"
+          (click)="selectWebsite(website)"
+          [ngClass]="{'active': website._id === selectedWebsite._id}"
+          class="list-group-item">
+        {{website.title}}
+      </li>
+    </ul>
+  </div>
+  <div class="col">
+    <ul class="list-group">
+      <li class="list-group-item">
+        <b><u><i>Pages</i></u></b>
+      </li>
+      <li *ngFor="let page of selectedWebsite.pages"
+          (click)="selectPage(page)"
+          [ngClass]="{'active': page._id === selectedPage._id}"
+          class="list-group-item">
+        {{page.title}}
+      </li>
+    </ul>
+  </div>
+  <app-row-list class="col"
+    [rows]="selectedPage.rows"></app-row-list>
+</div>
