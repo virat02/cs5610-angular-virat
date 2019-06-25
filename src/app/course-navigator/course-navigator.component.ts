@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {CourseNavigatorServiceClient} from '../services/CourseNavigatorServiceClient';
+import CourseNavigatorServiceClient from '../services/CourseNavigatorServiceClient';
 
 @Component({
   selector: 'app-course-navigator',
@@ -10,7 +10,7 @@ export class CourseNavigatorComponent implements OnInit {
 
   constructor(private service: CourseNavigatorServiceClient) { }
 
-  courses
+  courses;
   selectedCourse = {
     modules: []
   };

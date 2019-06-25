@@ -1,15 +1,18 @@
 import { Injectable } from '@angular/core';
 
 @Injectable()
-export class UserService {
+export default class UserService {
+  PROFILE_ENDPOINT = 'http://localhost:3000/api/profile/';
+  LOGIN_ENDPOINT =  'http://localhost:3000/api/login';
+  REGISTER_ENDPOINT = 'http://localhost:4000/api/register';
 
   findUserById(userId) {
-    return fetch('http://localhost:3000/api/profile/' + userId)
+    return fetch(this.PROFILE_ENDPOINT + userId)
       .then(response => response.json());
   }
 
   findAllUsers() {
-    return fetch('http://localhost:3000/api/profile')
+    return fetch(this.PROFILE_ENDPOINT)
       .then(response => response.json());
   }
 
@@ -18,10 +21,9 @@ export class UserService {
       username,
       password
     };
-    return fetch('http://localhost:3000/api/login', {
+    return fetch(this.LOGIN_ENDPOINT, {
       method: 'post',
       body: JSON.stringify(credentials),
-      credentials: 'include',
       headers: {
         'content-type': 'application/json'
       }
@@ -29,20 +31,18 @@ export class UserService {
   }
 
   updateProfile(userId, model) {
-    return fetch('http://localhost:4000/api/profile/' + userId, {
+    return fetch(this.PROFILE_ENDPOINT + userId, {
       method: 'put',
       body: JSON.stringify(model),
-      credentials: 'include',
       headers: {
         'content-type': 'application/json'
       }
-    }).then(response => (response)).catch(error => {
-      alert('Update error: ' + error);
-    });
+    }).then(response => (response))
+        .catch(error => alert('Update error: ' + error));
   }
 
   deleteProfile(userId) {
-    return fetch('http://localhost:4000/api/profile/' + userId, {
+    return fetch(this.PROFILE_ENDPOINT + userId, {
       method: 'delete',
       credentials: 'include'
     });
@@ -55,15 +55,12 @@ export class UserService {
       username,
       password
     };
-    return fetch('http://localhost:4000/api/register', {
+    return fetch(this.REGISTER_ENDPOINT, {
       body: JSON.stringify(user),
-      credentials: 'include',
       method: 'post',
       headers: {
         'content-type': 'application/json'
       }
-    }).then(response => (
-      response.json()
-    ));
+    }).then(response => response.json());
   }
 }
