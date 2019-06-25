@@ -12,6 +12,9 @@ export class ColumnToolbarComponent implements OnInit {
 
   @Input() row;
   @Input() column;
+  @Input() websiteId;
+  @Input() pageId;
+  @Input() page;
 
   constructor(private model: Model) { }
 

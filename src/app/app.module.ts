@@ -1,33 +1,33 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {FormsModule} from '@angular/forms';
 
-import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { ProfileComponent } from './profile/profile.component';
-import { routing } from './app.routing';
+import {AppComponent} from './app.component';
+import {LoginComponent} from './login/login.component';
+import {RegisterComponent} from './register/register.component';
+import {ProfileComponent} from './profile/profile.component';
+import {routing} from './app.routing';
 import UserService from './services/UserService';
-import { CourseNavigatorServiceClient } from './services/CourseNavigatorServiceClient';
-import { CourseNavigatorComponent } from './course-navigator/course-navigator.component';
-import { PageComponent } from './layout-editor/page/page.component';
-import { RowComponent } from './layout-editor/row/row.component';
-import { ColumnComponent } from './layout-editor/column/column.component';
-import { WidgetComponent } from './layout-editor/widgets/widget/widget.component';
-import { HeadingComponent } from './layout-editor/widgets/heading/heading.component';
-import { ParagraphComponent } from './layout-editor/widgets/paragraph/paragraph.component';
-import { WidgetToolbarComponent } from './layout-editor/widgets/widget-toolbar/widget-toolbar.component';
-import { LessonListComponent } from './lesson-list/lesson-list.component';
+import {CourseNavigatorServiceClient} from './services/CourseNavigatorServiceClient';
+import {CourseNavigatorComponent} from './course-navigator/course-navigator.component';
+import {PageComponent} from './layout-editor/page/page.component';
+import {RowComponent} from './layout-editor/row/row.component';
+import {ColumnComponent} from './layout-editor/column/column.component';
+import {WidgetComponent} from './layout-editor/widgets/widget/widget.component';
+import {HeadingComponent} from './layout-editor/widgets/heading/heading.component';
+import {ParagraphComponent} from './layout-editor/widgets/paragraph/paragraph.component';
+import {WidgetToolbarComponent} from './layout-editor/widgets/widget-toolbar/widget-toolbar.component';
+import {LessonListComponent} from './lesson-list/lesson-list.component';
 import Model from './models/Model';
-import { ColumnToolbarComponent } from './column-toolbar/column-toolbar.component';
+import {ColumnToolbarComponent} from './column-toolbar/column-toolbar.component';
 import LayoutService from './services/LayoutService';
-import { WebsiteListComponent } from './website-list/website-list.component';
+import {WebsiteListComponent} from './website-list/website-list.component';
 import WebsiteService from './services/WebsiteService';
-import { PageListComponent } from './page-list/page-list.component';
+import {PageListComponent} from './page-list/page-list.component';
 import PageService from './services/PageService';
-import { PageEditorComponent } from './page-editor/page-editor.component';
-import { PageRowComponent } from './page-row/page-row.component';
-import { PageColumnComponent } from './page-column/page-column.component';
+import {PageEditorComponent} from './page-editor/page-editor.component';
+import {PageRowComponent} from './page-row/page-row.component';
+import {PageColumnComponent} from './page-column/page-column.component';
 import PageModel from './models/PageModel';
 import {WidgetEditorComponent} from './layout-editor/widgets/widget-editor/widget-editor.component';
 
@@ -60,14 +60,15 @@ import {WidgetEditorComponent} from './layout-editor/widgets/widget-editor/widge
     FormsModule
   ],
   providers: [
-    UserService,
-    CourseNavigatorServiceClient,
-    WebsiteService,
-    PageService,
-    Model,
-    LayoutService,
-    PageModel
+    {provide: UserService, useClass: UserService},
+    {provide: CourseNavigatorServiceClient, useClass: CourseNavigatorServiceClient},
+    {provide: WebsiteService, useClass: WebsiteService},
+    {provide: PageService, useClass: PageService},
+    {provide: Model, useClass: Model},
+    {provide: LayoutService, useClass: LayoutService},
+    {provide: PageModel, useClass: PageModel}
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
