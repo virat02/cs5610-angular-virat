@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 
 @Injectable()
 export default class WebsiteService {
-  WEBSITE_URL = 'http://localhost:3000/api/websites';
+  WEBSITE_URL = 'https://dry-earth-81729.herokuapp.com/api/websites';
 
   findAllWebsites = () =>
     fetch(this.WEBSITE_URL)

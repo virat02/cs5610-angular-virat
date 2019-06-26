@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export default class UserService {
-  PROFILE_ENDPOINT = 'http://localhost:3000/api/profile/';
-  LOGIN_ENDPOINT =  'http://localhost:3000/api/login';
-  REGISTER_ENDPOINT = 'http://localhost:4000/api/register';
+  PROFILE_ENDPOINT = 'https://dry-earth-81729.herokuapp.com/api/profile/';
+  LOGIN_ENDPOINT =  'https://dry-earth-81729.herokuapp.com/api/login';
+  REGISTER_ENDPOINT = 'https://dry-earth-81729.herokuapp.com/api/register';
 
   findUserById(userId) {
     return fetch(this.PROFILE_ENDPOINT + userId)
