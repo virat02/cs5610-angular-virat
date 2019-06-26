@@ -120,16 +120,37 @@ export default class Model
   moveWidgetUp(row: any, col: any, widget: any) {
     const widgetIndex = col.widgets.indexOf(widget);
     if (widgetIndex > 0) {
-      col.splice(widgetIndex - 1, 0,
-        col.splice(widgetIndex, 1)[0]);
+      col.widgets.splice(widgetIndex - 1, 0,
+        col.widgets.splice(widgetIndex, 1)[0]);
     }
   }
 
   moveWidgetDown(row: any, col: any, widget: any) {
     const widgetIndex = col.widgets.indexOf(widget);
     if (widgetIndex < col.widgets.length - 1) {
-      col.splice(widgetIndex + 1, 0,
-        col.splice(widgetIndex, 1)[0]);
+      col.widgets.splice(widgetIndex + 1, 0,
+        col.widgets.splice(widgetIndex, 1)[0]);
+    }
+  }
+
+  deleteRow(page: any, row: any) {
+    const rowIndex = page.rows.indexOf(row);
+    page.rows.splice(rowIndex, 1);
+  }
+
+  moveRowUp(page: any, row: any) {
+    const rowIndex = page.rows.indexOf(row);
+    if (rowIndex > 0) {
+      page.rows.splice(rowIndex - 1, 0,
+        page.rows.splice(rowIndex, 1)[0]);
+    }
+  }
+
+  moveRowDown(page: any, row: any) {
+    const rowIndex = page.rows.indexOf(row);
+    if (rowIndex < page.rows.length - 1) {
+      page.rows.splice(rowIndex + 1, 0,
+        page.rows.splice(rowIndex, 1)[0]);
     }
   }
 }

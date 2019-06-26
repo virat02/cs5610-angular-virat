@@ -16,13 +16,12 @@
        class="fa fa-arrow-left"></i>
     <i (click)="moveWidgetRight()"
        class="fa fa-arrow-right"></i>
-    <select>
-      <option>Header</option>
-      <option>Paragraph</option>
-      <option>HTML</option>
-      <option>YouTube</option>
-      <option>Image</option>
-      <option>Code</option>
+    <select (change)="changeVal($event.target.value)">
+      <option value="HEADING">Header</option>
+      <option value="PARAGRAPH">Paragraph</option>
+      <option value="HTML">HTML</option>
+      <option value="YOUTUBE">YouTube</option>
+      <option value="IMAGE">Image</option>
     </select>
   </span>
 </span>

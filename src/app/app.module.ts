@@ -30,6 +30,7 @@ import {PageRowComponent} from './page-row/page-row.component';
 import {PageColumnComponent} from './page-column/page-column.component';
 import PageModel from './models/PageModel';
 import {WidgetEditorComponent} from './layout-editor/widgets/widget-editor/widget-editor.component';
+import { RowToolbarComponent } from './row-toolbar/row-toolbar.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import {WidgetEditorComponent} from './layout-editor/widgets/widget-editor/widge
     PageEditorComponent,
     PageRowComponent,
     PageColumnComponent,
-    WidgetEditorComponent
+    WidgetEditorComponent,
+    RowToolbarComponent
   ],
   imports: [
     routing,

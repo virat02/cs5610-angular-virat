@@ -1,0 +1,14 @@
+<span (mouseleave)="hideWidgetToolbar=true">
+  <i class="fa fa-gear"
+     (mouseenter)="hideWidgetToolbar=false"></i>
+  <span
+    [hidden]="hideWidgetToolbar"
+    (mouseleave)="hideWidgetToolbar=true">
+    <i class="fa fa-arrow-up"
+       (click)="moveRowUp()"></i>
+    <i class="fa fa-arrow-down"
+       (click)="moveRowDown()"></i>
+    <i class="fa fa-remove"
+       (click)="deleteRow()"></i>
+  </span>
+</span>
